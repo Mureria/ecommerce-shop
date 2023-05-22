@@ -18,7 +18,7 @@ const handleNav = () => {
   return (
    <>
    <div className='hidden md:block w-full bg-black text-white p-3'>
-    <div className='flex items-center justify-between max-w-[1440px] pb-1 mx-auto border-b border-gray-800'>
+    <div className='flex items-center justify-between max-w-[1400px] pb-1 mx-auto border-b border-gray-800'>
       <Marquee>
         <h1 className='text-xl mr-[10rem]'>Enjoy Our Amazing SOLEFUL Discounts</h1>
         <a href="0797516617">Call or whatsapp: 0797516617</a>
@@ -26,7 +26,7 @@ const handleNav = () => {
     </div>
    </div>
     <div className='w-full bg-black text-white p-3'>
-      <div className='flex items-center justify-between max-w-[1440px] mx-auto '>
+      <div className='flex items-center justify-between max-w-[1400px] mx-auto '>
         <div>
           <Link to='/'><h1 className='text-xl font-bold md:text-2xl my-4'>Chosen Soles</h1></Link>
         </div>
@@ -35,6 +35,7 @@ const handleNav = () => {
             <Link to='/'>Home</Link>
             <Link to='about'>About</Link>
             <Link to='contact'>Contact</Link>
+            <Link to='FAQ'>FAQs</Link>
           </ul>
         </div>
         <div className='hidden md:flex gap-6'>

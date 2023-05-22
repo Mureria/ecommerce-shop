@@ -8,7 +8,7 @@ const Contact = () => {
           <div className='grid md:grid-cols-2 gap-8'>
             <div>
               <h1 className='text-xl md:text-6xl font-bold text-center '>Contact Us</h1>
-              <p className='md:text-2xl text-center py-10 '>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ad, tempore labore eligendi corporis ea!</p>
+              <p className='md:text-2xl text-center py-10 '>If you have any questions or inquiries, please don't hesitate to reach out to us.</p>
               <form action="" className='my-8'>
                 <div className=' grid grid-cols-2 gap-4 w-full'>
                   <div>
