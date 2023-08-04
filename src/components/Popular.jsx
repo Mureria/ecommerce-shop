@@ -36,7 +36,7 @@ const Popular = () => {
   return (
     <>
         <div className='w-full'>
-            <div className='max-w-[1440px] my-6 mx-auto px-4'>
+            <div className='max-w-[1200px] my-6 mx-auto px-4'>
             <h1 className='text-2xl font-bold py-4 md:text-4xl'>Popular</h1>
                 <div className='grid grid-cols-2 gap-4 md:grid-cols-4 gap-6 lg:grid-cols-5'>
                     {shoes.map((item)=>{
