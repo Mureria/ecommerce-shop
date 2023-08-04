@@ -7,7 +7,7 @@ const Collection = () => {
   return (
     <>
         <div className='w-full text-xl md:text-4xl'>
-            <div className='max-w-[1440px} my-4 mx-auto rounded-md'>
+            <div className='max-w-[1200px} my-4 mx-auto rounded-md'>
                 <div className=''>
                     <div>
                         <Popular/>

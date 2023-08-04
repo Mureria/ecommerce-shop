@@ -5,7 +5,7 @@ const Checkout = () => {
   return (
     <>
       <div className='w-full h-full'>
-        <div className='max-w-[1420px] mx-auto my-6 px-4'>
+        <div className='max-w-[1200px] mx-auto my-6 px-4'>
           <div className='grid md:grid-cols-2 gap-4'>
             <div>
               <h1 className='text-2xl font-bold md:text-4xl'>Address Information</h1>

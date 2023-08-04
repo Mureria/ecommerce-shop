@@ -11,21 +11,21 @@ const FAQ= () => {
 
   return (
     <>
-        <div className="w-full h-full rounded-lg shadow-md">
-      <div className="max-w-[1240px] my-0 mx-auto">
-        <div className="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
-          <h2 className="text-2xl md:text-3xl  font-bold mb-10">
-            Frequently Asked Questions
-          </h2>
-          <div className="space-y-4">
+      <div className="w-full h-full rounded-lg shadow-sm">
+        <div className="max-w-[1200px] my-0 mx-auto">
+          <div className="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
+            <h2 className="text-2xl md:text-2xl  font-bold mb-6 md:mb-10">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-2 pb-10">
 
             {Quiz.map((quiz, index) => (
               <div key={index} className={`w-full  border-b border-gray-300 ${openSection === index ? "open" : "" }`}>
-                <h1 className=" flex justify-between items-center font-medium md:text-2xl text-xl px-4 py-6" onClick={() => handleOpen(index)}>
+                <h1 className=" flex justify-between items-center font-medium text-xl px-4 py-4 " onClick={() => handleOpen(index)}>
                   {quiz.question}
-                  {openSection === index ? <AiOutlineMinus/> : <AiOutlinePlus/>}
+                  {openSection === index ? <AiOutlineMinus size={16} color="red"/> : <AiOutlinePlus size={16}/>}
                 </h1>
-                <p className={`${ openSection === index ? "block" : "hidden"} md:xl text-xl py-6 pt-0 ml-4 -mt-4 `}>
+                <p className={`${ openSection === index ? "block" : "hidden"} text-base py-4 pt-0 ml-4  `}>
                   {quiz.answer}
                 </p>
               </div>

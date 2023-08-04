@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <>
       <div className='w-full h-full'>
-        <div className='max-w-[1440px] my-20 mx-auto px-4'>
+        <div className='max-w-[1200px] my-20 mx-auto px-4'>
           <div className='grid md:grid-cols-2 gap-8'>
             <div>
               <h1 className='text-xl md:text-6xl font-bold text-center '>Contact Us</h1>

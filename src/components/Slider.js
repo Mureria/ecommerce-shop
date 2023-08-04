@@ -12,7 +12,7 @@ import  Lv from '../assets/Louis_Vuitton_logo_PNG8.png'
 const Slider = () => {
   return (
     <>
-          <div className='flex gap-10 items-center justify-between'>
+          <div className='flex width-[1200px] gap-10 items-center justify-between'>
           <img src={adidas} alt="" className='w-[100px] object-contain' />
           <img src={Lv} alt="" className='w-[100px] object-contain' />
           <img src={nike} alt="" className='w-[100px] object-contain' />
