@@ -23,7 +23,7 @@ const Home = () => {
           </form>
           <FaSearch color='lightgray' className='absolute top-3 left-7'/>
         </div>
-        <div className='max-w-[1200px] my-10 mx-auto px-4 flex justify-between my-10 hidden md:block'>
+        <div className='max-w-[1200px] my-10 mx-auto px-4 flex justify-between my-10 hidden md:flex'>
         {data.map((item) => <p className='border px-8 py-2 rounded-full hover:border-yellow-300'>{item}</p>)}
 
         </div>
