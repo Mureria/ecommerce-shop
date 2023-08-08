@@ -23,7 +23,7 @@ const Home = () => {
           </form>
           <FaSearch color='lightgray' className='absolute top-3 left-7'/>
         </div>
-        <div className='max-w-[1200px] my-10 mx-auto px-4 flex justify-between my-10 hidden md:flex'>
+        <div className='max-w-[1200px] mx-auto px-4 justify-between my-10 hidden md:flex'>
         {data.map((item) => <p className='border px-8 py-2 rounded-full hover:border-yellow-300'>{item}</p>)}
 
         </div>
@@ -32,7 +32,7 @@ const Home = () => {
           <div className='grid grid-cols-2 gap-2 '>
           <div className='flex  flex-col justify-center items-start'>
             <h1 className='pb-10 md:pb-20 text-3xl md:text-5xl font-bold'>Shop through our collection</h1>
-            <Link to='collection'><p className='font-medium text-l md:text-xl border border-gray-800 py-3 px-5 rounded-md'>Shop now</p></Link>
+            <Link to='collection'><p className='font-medium text-base md:text-base border border-gray-800 py-3 px-5 rounded-md hover:bg-black hover:text-white ease-in-out duration-700'>Shop now</p></Link>
           </div>
           <div className='flex justify-center items-center'>
             <img className='w-full h-full object-cover' src="https://images.unsplash.com/photo-1552346154-21d32810aba3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt=""/>

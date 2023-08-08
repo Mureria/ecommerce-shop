@@ -40,7 +40,7 @@ const handleNav = () => {
         </div>
         <div className='hidden md:flex gap-6'>
           <Link to='checkout'><AiOutlineShoppingCart size={30}/></Link>
-          <CgProfile size={30}/>
+          <Link to='Signin'><CgProfile size={30}/></Link>
         </div>
         <div className='md:hidden' >
         {nav ?  <AiOutlineClose size={30} onClick={handleNav} /> : <BiMenu size={30} onClick={handleNav} className=''/> }
