@@ -38,14 +38,14 @@ const Popular = () => {
         <div className='w-full'>
             <div className='max-w-[1200px] my-6 mx-auto px-4'>
             <h1 className='text-2xl font-bold py-4 md:text-4xl'>Popular</h1>
-                <div className='grid grid-cols-2 gap-4 md:grid-cols-4 gap-6 lg:grid-cols-5'>
+                <div className='grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-5'>
                     {shoes.map((item)=>{
                         return (
-                            <div className='shadow-lg '>
+                            <div className='shadow-lg'>
                                 <img src={item.images} alt='' className='	'/>
-                                <h1 className='text-lg'>{item.brand}</h1>
-                                <h1 className='text-xl font-bold '>{item.amount}</h1>
-                                <p>{item.rating}</p>
+                                <h1 className='text-lg px-2'>{item.brand}</h1>
+                                <h1 className='text-xl font-bold px-2'>{item.amount}</h1>
+                                <p className='px-2'>{item.rating}</p>
                             </div>
                             )
                         })}

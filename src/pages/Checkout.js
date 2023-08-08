@@ -5,7 +5,7 @@ const Checkout = () => {
   return (
     <>
       <div className='w-full h-full'>
-      <div className='max-w-[1200px] mx-auto my-2 px-4'>
+      <div className='max-w-[1200px] mx-auto my-10 mb-40 px-4 '>
           <div className='grid md:grid-cols-2 gap-4'>
             <div>
               <h1 className='text-xl font-bold md:text-3xl p-4'>Address Information</h1>
@@ -92,30 +92,30 @@ const Checkout = () => {
                   <h1 className='font-bold text-base md:text-xl mb-4'>Delivery Address</h1>
                 </div>
                 <div>
-                  <button className='border border-orange-400 rounded-md px-2'>Add New Address</button>
+                  <button className='border border-orange-400 rounded-md px-2 text-sm hover:bg-orange-500'>Add New Address</button>
                 </div>
               </div>
-              <div className='md:flex gap-2 py-4 '>
-                <h1>Ireri</h1>
-                <h1>0797516617</h1>
-                <h1>Kiambu,Kinoo,Kinoo Electricals and Electronics World KiliShop,KINOO,Mama Ngina Stage, Electricals and Electronics World at Marimo Construction</h1>
+              <div className='md:flex gap-2 py-4  '>
+                <h1 className='text-sm md:text-base'>Ireri</h1>
+                <h1 className='text-sm md:text-base'>0797516617</h1>
+                <h1 className='text-sm md:text-base'>Kiambu,Kinoo,Kinoo Electricals and Electronics World KiliShop,KINOO,Mama Ngina Stage, Electricals and Electronics World at Marimo Construction</h1>
               </div>
             </div>
 
             <div className='bg-gray-100 rounded-lg p-4'>
-              <h1 className='text-2xl md:text-3xl font-bold mb-8 md:mb-16'>Order Summary</h1>
+              <h1 className='text-xl font-bold md:text-3xl mb-8 md:mb-16'>Order Summary</h1>
               <div className='grid grid-cols-4 border-b border-gray-300 pb-4'>
                 <div>
-                  <h1 className='font-bold text-sm md:text-2xl'>Item</h1>
+                  <h1 className='font-bold text-sm md:text-lg font-semibold'>Item</h1>
                 </div>
                 <div>
-                  <h1 className='text-sm md:text-2xl'>Unit Price</h1>
+                  <h1 className='text-sm md:text-lg font-semibold'>Unit Price</h1>
                 </div>
                 <div>
-                  <h1 className='text-sm md:text-2xl'>Quantity</h1>
+                  <h1 className='text-sm md:text-lg font-semibold'>Quantity</h1>
                 </div>
                 <div>
-                  <h1 className='text-sm md:text-2xl'>Amount</h1>
+                  <h1 className='text-sm md:text-lg font-semibold'>Amount</h1>
                 </div>
               </div>
               <div className='grid grid-cols-4 gap-4 py-4'>
@@ -123,24 +123,24 @@ const Checkout = () => {
                   <img src="https://image.kilimall.com/kenya/shop/store/goods/7731/2022/12/16698998912829ab97ed8252047669b2a025616820c26_240.jpg.webp" alt="" />
                 </div>
                 <div className='flex justify-center items-center'>
-                  <h1 className='text-xl md:2xl'>KSh 23,699</h1>
+                  <h1 className='text-sm md:text-base'>KSh 23,699</h1>
                 </div>
                 <div className='flex justify-center items-center'>
-                  <h1 className='text-xl md:2xl'>1</h1>
+                  <h1 className='text-sm md:text-base'>1</h1>
                 </div>
                 <div className='flex justify-center items-center'>
-                  <h1 className='font-bold text-orange-400 text-xl md:2xl'>KSh 23,699</h1>
+                  <h1 className='font-bold text-orange-400 text-sm md:text-base'>KSh 23,699</h1>
                 </div>
               </div>
               <div className='grid grid-cols-2 gap-3 border-t border-gray-300 pt-8 mt-4'>
-               <h1 className='text-xl'>Goods Amount</h1>
-               <h1 className='text-xl'>Ksh 23,699</h1>
-               <h1 className='text-xl'>Shipping Fee</h1>
-               <h1 className='text-xl'>+ Ksh 219</h1>
-               <h1 className='text-2xl font-bold text-orange-400 mt-4'>Pay Amount</h1>
-               <h1 className='text-2xl font-bold text-orange-400 mt-4'>Ksh 23,918</h1>
+               <h1 className='text-sm md:text-lg'>Goods Amount</h1>
+               <h1 className='text-sm md:text-lg'>Ksh 23,699</h1>
+               <h1 className='text-sm md:text-lg'>Shipping Fee</h1>
+               <h1 className='text-sm md:text-lg'>+ Ksh 219</h1>
+               <h1 className='text-sm font-bold text-orange-400 mt-4 md:text-xl'>Pay Amount</h1>
+               <h1 className='text-sm font-bold text-orange-400 mt-4 md:text-xl'>Ksh 23,918</h1>
               </div>
-              <div className='mt-20 text-xl md:text-2xl'>
+              <div className='mt-20 text-base md:text-lg'>
                 <button className='px-6 py-4 bg-orange-500 text-white w-full font-bold '>Place Order</button>
               </div>
             </div>
