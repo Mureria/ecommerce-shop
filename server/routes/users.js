@@ -36,7 +36,7 @@ router.post('/', async (req,res)=>{
 
 
 // Login user
-app.post("/login", async (req, res) => {
+router.post("/login", async (req, res) => {
 
     // Our login logic starts here
     try {
@@ -50,7 +50,7 @@ app.post("/login", async (req, res) => {
       // Validate if user exist in our database
       const user = await User.findOne({ email });
   
-      if (user && (await bcrypt.compare(password, user.password))) {
+      if (user && (await bcrypt.compare(password, user.passwordHash))) {
         // Create token
         const token = jwt.sign(
           { user_id: user._id, email },
