@@ -10,12 +10,14 @@ const port =process.env.PORT;
 app.use(express.json());
 
 //Routes
-const categoriesRoutes = require('./routes/categories');
 const usersRoutes = require('./routes/users');
+const categoriesRoutes = require('./routes/categories');
+const productsRoutes = require('./routes/products');
 
 
 app.use(`/categories`, categoriesRoutes);
 app.use(`/users`, usersRoutes);
+app.use(`/products`, productsRoutes);
 
 //Database
 mongoose.connect(process.env.MONGO_URI)
