@@ -156,6 +156,7 @@ router.get(`/get/count`, async (req, res) =>{
         if(!productCount) {
             res.status(500).json('No products')
         } 
+        
         res.status(200).send(`${productCount} products`); 
     } catch (error) {
         res.status(500).json(error.message);
