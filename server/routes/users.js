@@ -7,16 +7,17 @@ const User = require('../models/users');
 // Get all users
 router.get('/all', async (req, res) =>{
     try {
+
         const userList = await User.find().select('-password');
 
-        if(!userList) {
-            res.status(500).json({success: false})
+        if(!userList || userList.length === 0) {
+            return res.status(500).json('No users at the moment')
         } 
+
         res.send(userList);
     } catch (error) {
-        res.status(500).json(error)
+        res.status(500).json(error.message)
     }
-   
 })
 
 
@@ -30,11 +31,11 @@ router.get('/:id', async(req,res)=>{
         const user = await User.findById(userId).select('-passwordHash');
 
         if(!user) {
-        res.status(500).json({message: 'The user with the given ID was not found.'})
+        return res.status(500).json('User not found!')
     }  
     res.status(200).send(user);
     } catch (error) {
-        res.status(500).json(error)
+        res.status(500).json(error.message)
     }
    
 })
@@ -79,7 +80,7 @@ router.put('/:id',async (req, res)=> {
     res.send(user);
         
     } catch (error) {
-        res.status(500).json(error)
+        res.status(500).json(error.message)
     }
     
 })
@@ -92,11 +93,11 @@ router.delete('/:id', async(req, res)=>{
     try {
         const user = await User.findByIdAndDelete(req.params.id)
         if(!user) {
-            return res.status(404).json({success: false , message: "user not found!"})
+            return res.status(404).json("User not found!");
         } 
-        res.status(200).json({success: true, message: 'User deleted successfully!'})
+        res.status(200).json('User deleted successfully!');
     } catch (error) {
-        res.status(500).json(error) 
+        res.status(500).json(error.message) 
     }
    
 })
@@ -104,16 +105,16 @@ router.delete('/:id', async(req, res)=>{
 
 
 // Get total number of users
-router.get('/all/users', async (req, res) =>{
+router.get('/get/count', async (req, res) =>{
     try {
         const userCount = await User.countDocuments();
 
     if(!userCount) {
-    return res.status(500).json({message: 'No Users', success: false})
+    return res.status(500).json(`0 Users`)
     } 
     res.status(200).send(`${userCount} Users`);
     } catch (error) {
-       return res.status(500).json(error) 
+       return res.status(500).json(error.message) 
     }   
 })
 

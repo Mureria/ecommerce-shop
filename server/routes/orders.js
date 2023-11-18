@@ -35,6 +35,7 @@ router.post('/', async (req, res) => {
 
         // Check if an order with the same details already exists
         const existingOrder = await Order.findOne({
+            
             orderItems: orderItemsIdsResolved,
             shippingAddress1: req.body.shippingAddress1,
             shippingAddress2: req.body.shippingAddress2,
@@ -184,7 +185,6 @@ router.get(`/get/count`, async (req, res) =>{
 })
 
 
-// Get total sales
 // Get total sales
 router.get('/get/totalsales', async (req, res) => {
     try {

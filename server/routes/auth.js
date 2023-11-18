@@ -53,7 +53,7 @@ router.post("/register", async (req, res) => {
   
       // return new user
       res.status(201).json(user);
-    } catch (err) {
+    } catch (error) {
         res.status(500).json(error)
     }
   });
@@ -88,7 +88,7 @@ router.post("/login", async (req, res) => {
         user.token = token;
   
         // user
-       return res.status(200).json('Successfully Logged In');
+       return res.status(200).json(user);
       }
       res.status(400).send("Invalid Credentials");
     } catch (error) {
