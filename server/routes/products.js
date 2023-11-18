@@ -72,19 +72,25 @@ router.get(`/:id`, async (req, res) =>{
 
 
 
-router.get(`/`, async (req, res) =>{
-    let filter = {};
-    if(req.query.categories)
-    {
-         filter = {category: req.query.categories.split(',')}
+router.get('/get/all', async (req, res) =>{
+    try {
+        let filter = {};
+        if(req.query.categories)
+        {
+             filter = {category: req.query.categories.split(',')}
+        }
+    
+        const productList = await Product.find(filter).populate('category');
+    
+        if(!productList || productList.length === 0) {
+           return res.status(500).json('No product at the moment!')
+        } 
+
+        res.send(productList);
+    } catch (error) {
+        return res.status(500).json(error.message);
     }
-
-    const productList = await Product.find(filter).populate('category');
-
-    if(!productList) {
-        res.status(500).json({success: false})
-    } 
-    res.send(productList);
+   
 })
 
 
@@ -154,7 +160,7 @@ router.get(`/get/count`, async (req, res) =>{
         const productCount = await Product.countDocuments();
 
         if(!productCount) {
-            res.status(500).json('No products')
+          return  res.status(500).json('No products')
         } 
         
         res.status(200).send(`${productCount} products`); 

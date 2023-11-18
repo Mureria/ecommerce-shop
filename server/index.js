@@ -4,20 +4,25 @@ const app = express();
 const mongoose = require('mongoose');
 require('dotenv/config');
 
+
+
 const port =process.env.PORT;
 
 //middleware
 app.use(express.json());
 
+
 //Routes
+const authRoutes = require('./routes/auth');
 const usersRoutes = require('./routes/users');
 const categoriesRoutes = require('./routes/categories');
 const productsRoutes = require('./routes/products');
 const ordersRoutes = require('./routes/orders');
+const verifyToken = require('./middleware/verifyToken');
 
-
+app.use(`/auth`, authRoutes);
 app.use(`/categories`, categoriesRoutes);
-app.use(`/users`, usersRoutes);
+app.use(`/users`, verifyToken, usersRoutes);
 app.use(`/products`, productsRoutes);
 app.use(`/orders`, ordersRoutes);
 
