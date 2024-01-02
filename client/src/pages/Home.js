@@ -5,6 +5,8 @@ import Popular from '../components/Popular';
 import Marquee from "react-fast-marquee";
 import Slider from '../components/Slider'
 import FAQ from '../components/FAQ';
+import Cat from '../components/Cat';
+import Partners from '../components/Partners';
 
 
 const data = ['Nike', 'Adidas', 'New Armor', 'Converse', 'New Balance'];
@@ -42,15 +44,22 @@ const Home = () => {
         </div>
           <div className='w-full my-10 md:my-30' ><Popular/></div>
       </div>
+
+      <div className='w-full my-10 md:my-40'>
+        <Cat/>
+      </div>
+
       <div className='w-full my-10 md:my-40'>
         <div className='max-w-[1200px] my-10 mx-auto py-10 px-4 rounded-md shadow-xl'>
         <Marquee>
           <Slider/>
         </Marquee>
         </div>
+
         <div className='max-w-[1200px] my-40 mx-auto'>
           <FAQ/>
         </div>
+        <Partners/>
       </div>
     </>
   )

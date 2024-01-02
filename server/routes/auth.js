@@ -1,18 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcryptjs');
+const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const User = require('../models/users');
+const User = require('../model/User');
 
 
 router.post("/register", async (req, res) => {
 
     try {
       // Get user input
-      const { name, email, password, phone, street, apartment, zip, city, country} = req.body;
+      const { firstName, lastName, email, password} = req.body;
   
       // Validate user input
-      if (!(email && password && name && phone && street && apartment && zip && city && country)) {
+      if (!(firstName && lastName && email && password )) {
         res.status(400).send("All input is required");
       }
   
@@ -28,22 +28,16 @@ router.post("/register", async (req, res) => {
   
       // Create user in our database
       const user = await User.create({
-        name,
+        firstName,
+        lastName,
         email,
         password: encryptedPassword,
-        phone,
-        street,
-        zip,
-        apartment,
-        city,
-        country
-
       });
   
       // Create token
       const token = jwt.sign(
         { user_id: user._id, email },
-        process.env.TOKEN_KEY,
+        process.env.secret,
         {
           expiresIn: "2h",
         }
@@ -69,7 +63,7 @@ router.post("/login", async (req, res) => {
   
       // Validate user input
       if (!(email && password)) {
-        res.status(400).send("All input is required");
+        return res.status(400).send("All input is required");
       }
       // Validate if user exist in our database
       const user = await User.findOne({ email });
@@ -78,7 +72,7 @@ router.post("/login", async (req, res) => {
         // Create token
         const token = jwt.sign(
           { user_id: user._id, email },
-          process.env.TOKEN_KEY,
+          process.env.secret,
           {
             expiresIn: "2h",
           }
@@ -88,7 +82,7 @@ router.post("/login", async (req, res) => {
         user.token = token;
   
         // user
-       return res.status(200).json(user);
+       return res.status(200).json("Login Successful");
       }
       res.status(400).send("Invalid Credentials");
     } catch (error) {

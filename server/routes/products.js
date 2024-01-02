@@ -1,174 +1,101 @@
 const express = require('express');
 const router = express.Router();
-const mongoose = require('mongoose');
+const Product = require('../model/Product');
 
-const Product = require('../models/products');
-const Category  = require('../models/categories');
+// Create a new product
+router.post('/', async (req, res) => {
+  try {
+    const { name, description, price, category } = req.body;
 
-
-//Create Product
-
-router.post(`/`, async (req, res) =>{
-    try {
-        const {name, description, richDescription, brand, price, category, countInStock, rating, isFeatured, image, images, numReviews} = req.body;
-
-        const existingProduct = await Product.findOne({ name, description });
-        
-        if(existingProduct) {
-            return res.status(400).send('Product already exists!')
-        }
-
-        const cat = await Category.findById(req.body.category);
-       
-        if(!cat) {
-            return res.status(400).send('Invalid Category')
-        }
+    const existingProduct = await Product.findOne({ name, description, price, category });
     
-        let product = new Product({
-            name,
-            description,
-            richDescription,
-            brand,
-            price,
-            image,
-            images,
-            category,
-            countInStock,
-            rating,
-            numReviews,
-            isFeatured,
-        })
-    
-        product = await product.save();
-    
-        if(!product) {
-            return res.status(500).send('The product cannot be created')
-        }
-    
-        res.status(200).send(product);
-    } catch (error) {
-        res.status(500).json(error.message)
+    if (existingProduct) {
+      return res.status(400).json({ error: 'Product already exists!' });
+    };
 
-    }
-})
+    const newProduct = new Product({ name, description, price, category });
 
+    const savedProduct = await newProduct.save();
 
-
-// Get product by id
-router.get(`/:id`, async (req, res) =>{
-    try {
-        const product = await Product.findById(req.params.id)
-        .populate('category');
-
-        if(!product) {
-          return  res.status(500).json('No product found!')
-        } 
-        res.send(product); 
-    } catch (error) {
-        res.status(500).json(error.message);
-    }
-    
-})
-
-
-
-router.get('/get/all', async (req, res) =>{
-    try {
-        let filter = {};
-        if(req.query.categories)
-        {
-             filter = {category: req.query.categories.split(',')}
-        }
-    
-        const productList = await Product.find(filter).populate('category');
-    
-        if(!productList || productList.length === 0) {
-           return res.status(500).json('No product at the moment!')
-        } 
-
-        res.send(productList);
-    } catch (error) {
-        return res.status(500).json(error.message);
-    }
-   
-})
-
-
-
-// Update product 
-router.put('/:id',async (req, res)=> {
-   try {
-
-    const productId = await Product.findById(req.params.id);
-    
-    if(!productId){
-        return res.status(400).send('Invalid Product Id')
-    }
-
-    const category = await Category.findById(req.body.category);
-    
-    if(!category) return res.status(400).send('Invalid Category')
-
-    const product = await Product.findByIdAndUpdate(
-        req.params.id,
-        {
-            name: req.body.name,
-            description: req.body.description,
-            richDescription: req.body.richDescription,
-            image: req.body.image,
-            brand: req.body.brand,
-            price: req.body.price,
-            category: req.body.category,
-            countInStock: req.body.countInStock,
-            rating: req.body.rating,
-            numReviews: req.body.numReviews,
-            isFeatured: req.body.isFeatured,
-        },
-        { new: true}
-    )
-
-    if(!product){
-    return res.status(500).send('the product cannot be updated!')
-    }
-    res.send(product);
-   } catch (error) {
-     res.status(500).json(error.message);
-   }
-})
-
-
-
-// Delete product 
-router.delete('/:id', async(req, res)=>{
-    try {
-       const product = await Product.findByIdAndDelete(req.params.id);
-
-       if(!product) {
-        return res.status(404).json('Product not found!')
-    } 
-
-    res.status(200).json('Product deleted successfully!')
-    }catch(error){
-        res.status(500).json(error.message);
-    }
-});
-    
-    
-// Get number of products
-router.get(`/get/count`, async (req, res) =>{
-    try {
-        const productCount = await Product.countDocuments();
-
-        if(!productCount) {
-          return  res.status(500).json('No products')
-        } 
-        
-        res.status(200).send(`${productCount} products`); 
-    } catch (error) {
-        res.status(500).json(error.message);
-    }
+    // Return created product
+    res.status(201).json(savedProduct);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
 });
 
+// Get all products
+router.get('/', async (req, res) => {
+  try {
+    const products = await Product.find()
+    .populate('category');
 
+    // Validate the products
+    if (!products || products.length === 0) {
+      return res.status(404).json({ error: 'No Product not found' });
+    }
 
-module.exports =router;
+    // Return the products
+    res.status(200).json(products);
+  } catch (error) {
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
+// Get a specific product by ID
+router.get('/:id', async (req, res) => {
+  try {
+    const product = await Product.findById(req.params.id)
+    .populate('category');
+
+    // Validate the product
+    if (!product) {
+      return res.status(404).json({ error: 'Product not found' });
+    }
+
+    // Return the product
+    res.status(200).json(product);
+  } catch (error) {
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
+// Update a product by ID
+router.put('/:id', async (req, res) => {
+  try {
+    const updatedProduct = await Product.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
+
+    // Validate the product
+    if (!updatedProduct) {
+      return res.status(404).json({ error: 'Product not found' });
+    }
+
+    // Return the updated product
+    res.status(200).json(updatedProduct);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+});
+
+// Delete a product by ID
+router.delete('/:id', async (req, res) => {
+  try {
+    const deletedProduct = await Product.findByIdAndDelete(req.params.id);
+    
+    // Validate the product
+    if (!deletedProduct) {
+      return res.status(404).json({ error: 'Product not found' });
+    }
+
+    // Delete the product
+    res.status(200).json({ message: 'Product deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
+module.exports = router;

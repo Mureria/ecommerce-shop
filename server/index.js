@@ -1,42 +1,44 @@
-require('dotenv/config');
-const express = require('express');
+require("dotenv").config();
+const express = require("express");
 const app = express();
-const mongoose = require('mongoose');
-require('dotenv/config');
+const mongoose = require("mongoose");
+
+const authRoutes = require('./routes/auth.js');
+const userRoutes = require('./routes/User');
+const productsRoutes = require('./routes/Products');
+const categoryRoutes = require('./routes/Categories.js');
+const orderItemsRoutes = require('./routes/OrderItem.js');
+const orderRoutes = require('./routes/Order.js');
+const reviewRoutes = require('./routes/Review.js');
 
 
 
-const port =process.env.PORT;
+const port = process.env.PORT || 5000;
 
-//middleware
+// middleware
 app.use(express.json());
 
+app.use('/auth', authRoutes);
+app.use('/users', userRoutes);
+app.use('/products', productsRoutes);
+app.use('/categories', categoryRoutes);
+app.use('/orderItems', orderItemsRoutes);
+app.use('/order', orderRoutes);
+app.use('/reviews', reviewRoutes);
 
-//Routes
-const authRoutes = require('./routes/auth');
-const usersRoutes = require('./routes/users');
-const categoriesRoutes = require('./routes/categories');
-const productsRoutes = require('./routes/products');
-const ordersRoutes = require('./routes/orders');
-const verifyToken = require('./middleware/verifyToken');
 
-app.use(`/auth`, authRoutes);
-app.use(`/categories`, categoriesRoutes);
-app.use(`/users`, verifyToken, usersRoutes);
-app.use(`/products`, productsRoutes);
-app.use(`/orders`, ordersRoutes);
 
-//Database
+
+// Db connection
 mongoose.connect(process.env.MONGO_URI)
-.then(()=>{
-    console.log('Database Connected')
-})
-.catch((err)=> {
-    console.log(err);
-})
+      .then(() => {
+        console.log("Successfully connected to database");
+      })
+      .catch((error) => {
+        console.log("database connection failed. exiting now...");
+        console.error(error);
+        process.exit(1);
+      });
 
-//Server
-app.listen(port, ()=>{
 
-    console.log(`server is running on port ${port}`);
-})
+app.listen(port, () => { console.log(`Server running on port ${port}`); });
