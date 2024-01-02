@@ -11,6 +11,8 @@ import Marquee from "react-fast-marquee";
 const Header = () => {
 const [nav, setNav] = useState(false);
 
+const logged = true;
+
 const handleNav = () => {
   setNav(!nav)
 }
@@ -38,9 +40,20 @@ const handleNav = () => {
             <Link to='FAQ'>FAQs</Link>
           </ul>
         </div>
-        <div className='hidden md:flex gap-6'>
+        <div className='hidden md:flex items-center gap-6'>
           <Link to='checkout'><AiOutlineShoppingCart size={30}/></Link>
-          <Link to='Signin'><CgProfile size={30}/></Link>
+
+          {logged ? (
+            <div className=''>
+              <img alt='' src='https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=1372&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' className='rounded-full object-cover w-9 h-9'/>
+            </div> 
+          ): (
+            <div>
+              <Link to='Signin'><CgProfile size={30}/></Link>
+            </div>
+          )}
+
+          
         </div>
         <div className='md:hidden' >
         {nav ?  <AiOutlineClose size={30} onClick={handleNav} /> : <BiMenu size={30} onClick={handleNav} className=''/> }
@@ -60,7 +73,7 @@ const handleNav = () => {
             <Link to='contact' className='border-b border-gray-800 py-4'>Contact</Link>
             <Link to='login' className='border-b border-gray-800 py-4'>Login</Link>
             <Link to='signin' className='border-b border-gray-800 py-4'>Sign up</Link>
-            <Link to='checkout' className='py-4'>Cart</Link></ul>};
+            <Link to='checkout' className='py-4'>Cart</Link></ul>}
     
    </>
     )

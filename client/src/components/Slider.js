@@ -1,5 +1,5 @@
 import React from 'react'
-import adidas from '../assets/Air_jordan_logo_PNG1.png'
+import  adidas from '../assets/Air_jordan_logo_PNG1.png'
 import nike from '../assets/nikePNG.png'
 import converse from '../assets/converse-logo-PNG-9.png'
 import newBalance from '../assets/New_balance_logo_PNG3.png'

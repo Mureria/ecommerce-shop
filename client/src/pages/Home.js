@@ -7,9 +7,11 @@ import Slider from '../components/Slider'
 import FAQ from '../components/FAQ';
 import Cat from '../components/Cat';
 import Partners from '../components/Partners';
+import HotCategory from '../components/HotCategory';
+import Trending from '../components/Trending';
 
 
-const data = ['Nike', 'Adidas', 'New Armor', 'Converse', 'New Balance'];
+const data = ['Nike', 'Adidas', 'New Armor', 'Converse', 'New Balance']
 
 const Home = () => {
   return (
@@ -27,8 +29,11 @@ const Home = () => {
         </div>
         <div className='max-w-[1200px] mx-auto px-4 justify-between my-10 hidden md:flex'>
         {data.map((item) => <p className='border px-8 py-2 rounded-full hover:border-yellow-300'>{item}</p>)}
-
         </div>
+
+        <div className='w-full my-10 md:my-30' ><HotCategory/></div>
+
+
         <div className='w-full  bg-gray-100 my-20'>
           <div className='max-w-[1200px] my-10 mx-auto px-4 py-16'>
           <div className='grid grid-cols-2 gap-2 '>
@@ -42,19 +47,26 @@ const Home = () => {
         </div>
           </div>
         </div>
-          <div className='w-full my-10 md:my-30' ><Popular/></div>
       </div>
+
+      <div className='w-full my-10 md:my-30' ><Trending/></div>
+
+
+      <div className='w-full my-10 mx-auto py-10 px-4 rounded-md shadow-xl'>
+        <Marquee>
+          <Slider/>
+        </Marquee>
+        </div>
+
+        <div className='w-full my-10 md:my-30' ><Popular/></div>
+
 
       <div className='w-full my-10 md:my-40'>
         <Cat/>
       </div>
 
       <div className='w-full my-10 md:my-40'>
-        <div className='max-w-[1200px] my-10 mx-auto py-10 px-4 rounded-md shadow-xl'>
-        <Marquee>
-          <Slider/>
-        </Marquee>
-        </div>
+        
 
         <div className='max-w-[1200px] my-40 mx-auto'>
           <FAQ/>
