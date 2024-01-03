@@ -10,6 +10,7 @@ import Page404 from './pages/404';
 import Checkout from './pages/Checkout';
 import Collection from './Collection';
 import FAQ from './components/FAQ';
+import Product from './pages/Product';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               <Route path='signin' element={<Signin/>}/>
               <Route path='404' element={<Page404/>}/>
               <Route path='checkout' element={<Checkout/>}/>
+              <Route path='product' element={<Product/>}/>
               <Route path='collection' element={<Collection/>}/>
               <Route path='faq' element={<FAQ/>}/>
             </Route> 
