@@ -41,20 +41,34 @@ const handleNav = () => {
           </ul>
         </div>
         <div className='hidden md:flex items-center gap-6'>
-          <Link to='checkout'><AiOutlineShoppingCart size={30}/></Link>
+          <div >
+            <Link to='cart' className='relative group'>
+              <AiOutlineShoppingCart size={30}/>
+              <p className='hidden group-hover:block absolute bottom-[-20px] text-black text-xs py-0 px-1 rounded-sm bg-slate-200'>Cart</p>
+            </Link>
+          </div>
+          
 
           {logged ? (
-            <div className=''>
-              <img alt='' src='https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=1372&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' className='rounded-full object-cover w-9 h-9'/>
-            </div> 
+            <div className='relative group'>
+              <img
+                alt=''
+                src='https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=1372&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                className='rounded-full object-cover w-9 h-9 group-hover:opacity-75'
+              />
+              <p className='hidden absolute bottom-[-20px] text-black text-xs py-0 px-1 rounded-sm bg-slate-200 group-hover:block'>
+                Account
+              </p>
+          </div>
+          
           ): (
             <div>
               <Link to='Signin'><CgProfile size={30}/></Link>
             </div>
           )}
 
-          
         </div>
+
         <div className='md:hidden' >
         {nav ?  <AiOutlineClose size={30} onClick={handleNav} /> : <BiMenu size={30} onClick={handleNav} className=''/> }
         </div>

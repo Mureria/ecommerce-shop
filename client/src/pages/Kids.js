@@ -28,17 +28,17 @@ const shoes = [{
 },
 ];
 
-const Popular = () => {
+const Kids = () => {
   return (
     <>
         <div className='w-full'>
             <div className='max-w-[1200px] mt-6 mx-auto px-4'>
-            <h1 className='text-2xl font-bold py-4 md:text-4xl'>Popular</h1>
+            <h1 className='text-2xl font-bold py-4 md:text-4xl'>Kids</h1>
                 <div className='grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-5'>
                     {shoes.map((item)=>{
                         return (
                             <div className='shadow-lg'>
-                                <Link to='product'>
+                                <Link to='/product'>
                                     <img src={item.images} alt='' className='	'/>
                                     <h1 className='text-lg px-2'>{item.brand}</h1>
                                     <h1 className='text-xl font-bold px-2 pb-6'>{item.amount}</h1>
@@ -53,4 +53,4 @@ const Popular = () => {
   )
 }
 
-export default Popular
+export default Kids

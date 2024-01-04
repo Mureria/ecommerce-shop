@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+
 
 const shoes = [{
     images: 'https://images.unsplash.com/photo-1552346154-21d32810aba3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
@@ -39,9 +41,11 @@ const Trending = () => {
                     {shoes.map((item)=>{
                         return (
                             <div className='shadow-lg'>
-                                <img src={item.images} alt='' className='	'/>
-                                <h1 className='text-lg px-2'>{item.brand}</h1>
-                                <h1 className='text-xl font-bold px-2 pb-6'>{item.amount}</h1>
+                                <Link to='product'>
+                                    <img src={item.images} alt='' className='	'/>
+                                    <h1 className='text-lg px-2'>{item.brand}</h1>
+                                    <h1 className='text-xl font-bold px-2 pb-6'>{item.amount}</h1>
+                                </Link> 
                             </div>
                             )
                         })}
