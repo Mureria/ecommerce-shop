@@ -3,12 +3,16 @@ import {  FaStar } from 'react-icons/fa'
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { GoPlus } from "react-icons/go";
 import { FiMinus } from "react-icons/fi";
+import { Link } from 'react-router-dom';
 
 
 
 
 
 const Product = () => {
+
+   const isLogged =true;
+
   return (
     <>
         <div className='w-full h- my-0'>
@@ -67,10 +71,31 @@ const Product = () => {
                             </div>
                         </div>
 
-                        <div className=' md:inline-flex mt-4 pb-6 border-b border-black/10'>
-                                <button className='w-full md:w-6/12 border mb-4 md:mb-0 border-orange-400 px-14 py-4 mr-4'>Add to Cart</button>
-                                <button className=' w-full md:w-6/12 border bg-orange-400 px-14 py-4'>Buy Now</button>
-                            </div>
+
+                        <div >
+                            {isLogged ? (
+                                <div className='flex md:inline-flex mt-10 pb-6 border-b border-black/10'>
+                                    <div>
+                                        <Link to='/' className='w-full md:w-6/12 border mb-4 md:mb-0 border-orange-400 px-14 py-4 mr-4'>Add to Cart</Link> 
+                                    </div>
+                                    
+                                    <div>
+                                        <Link to='/checkout' className=' w-full md:w-6/12 border bg-orange-400 px-14 py-4'>Buy Now</Link>
+                                    </div>
+                                    
+                                </div>
+                                ): (
+                                <div className='flex md:inline-flex mt-10 pb-6 border-b border-black/10'>
+                                    <div>
+                                        <Link to='home' className='w-full md:w-6/12 border mb-4 md:mb-0 border-orange-400 px-14 py-4 mr-4'>Add to Cart</Link> 
+                                    </div>
+                                    
+                                    <div>
+                                        <Link to='/login' className=' w-full md:w-6/12 border bg-orange-400 px-14 py-4'>Buy Now</Link>
+                                    </div>    
+                                </div>
+                            )}
+                        </div>
 
                             <div className='mt-4 flex gap-4'>
                                 <p>Payment:</p>

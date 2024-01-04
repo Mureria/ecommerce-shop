@@ -7,10 +7,14 @@ import Contact from './pages/Contact';
 import Login from './pages/Login';
 import Signin from './pages/Signin';
 import Page404 from './pages/404';
-import Checkout from './pages/Checkout';
+import Cart from './pages/Cart';
 import Collection from './Collection';
 import FAQ from './components/FAQ';
 import Product from './pages/Product';
+import Checkout from './pages/Checkout';
+import Men from './pages/Men';
+import Women from './pages/Women';
+import Kids from './pages/Kids';
 
 function App() {
   return (
@@ -24,6 +28,10 @@ function App() {
               <Route path='login' element={<Login/>}/>
               <Route path='signin' element={<Signin/>}/>
               <Route path='404' element={<Page404/>}/>
+              <Route path='cart' element={<Cart/>}/>
+              <Route path='men' element={<Men/>}/>
+              <Route path='women' element={<Women/>}/>
+              <Route path='kids' element={<Kids/>}/>
               <Route path='checkout' element={<Checkout/>}/>
               <Route path='product' element={<Product/>}/>
               <Route path='collection' element={<Collection/>}/>
