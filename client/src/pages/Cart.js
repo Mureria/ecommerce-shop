@@ -63,6 +63,7 @@ const Cart = () => {
               <p className='text-sm text-[#ff4444]'>Delete</p>
             </div>
           </div>
+          
           <div className='flex flex-col md:flex-row items-start md:items-center justify-center bg-slate-100 gap-3 px-4 py-4 rounded-sm mt-4'>
             <div className='basis-[30%]'>
               <div className='flex h-full flex-1 items-start gap-3'>

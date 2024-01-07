@@ -121,6 +121,7 @@ const Product = () => {
                     <p>The Nike Air Force 1 has experienced a resurgence in popularity, as fashion moves in waves. Occasionally, the sneaker takes a backseat to other “shoes of the moment”, but always resurfaces. Regardless if the AF1 is currently an “it” sneaker, it still sells the most and always remains a popular choice.</p>
                 </div>
 
+                {/* Review */}
                 <div className='bg-slate-100 mt-4 p-2 rounded'>
                     <h1 id='Reviews' className='font-bold text-lg pb-6'>Customer Reviews</h1>
                     <div className='flex flex-col md:flex-row items-center bg-white px-4 py-2 gap-5 md:gap-20'>

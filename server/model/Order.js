@@ -11,14 +11,17 @@ const orderSchema = new mongoose.Schema({
     ref: 'OrderItem', 
     required: true }],
 
-  totalPrice: { 
-    type: Number, 
-    required: true },
-
     status: { 
       type: String, 
       required: true, 
-      default: 'Pending' },
+      default: 'Pending' 
+    },
+    totalAmount: { 
+      type: String, 
+      required: true, 
+      default: 'Pending' 
+    },
+
 
 });
 
