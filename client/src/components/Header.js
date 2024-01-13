@@ -4,14 +4,17 @@ import {AiOutlineShoppingCart, AiOutlineClose} from 'react-icons/ai'
 import {CgProfile} from 'react-icons/cg'
 import {BiMenu} from 'react-icons/bi'
 import { useState } from 'react'
+
 import Marquee from "react-fast-marquee";
 
 
 
 const Header = () => {
+
 const [nav, setNav] = useState(false);
 
-const logged = true;
+
+const logged = false;
 
 const handleNav = () => {
   setNav(!nav)
@@ -61,9 +64,9 @@ const handleNav = () => {
               </p>
           </div>
           
-          ): (
+          ) : (
             <div>
-              <Link to='Signin'><CgProfile size={30}/></Link>
+              <Link to='register'><CgProfile size={30}/></Link>
             </div>
           )}
 

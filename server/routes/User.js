@@ -73,4 +73,16 @@ router.delete('/:id', verifyToken, async (req, res) => {
   }
 });
 
+
+// Count the number of users
+router.get('/get/users', async (req, res) => {
+  try {
+    const userCount = await User.countDocuments();
+
+    res.json(`${userCount} users`);
+  } catch (error) {
+    res.status(500).json({ error: 'Internal Server Errorssss' });
+  }
+});
+
 module.exports = router;
