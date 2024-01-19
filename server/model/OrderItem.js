@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const orderItemSchema = new mongoose.Schema({
+const orderItemSchema = new mongoose.Schema([{
   
     product: { 
         type: mongoose.Schema.Types.ObjectId, 
@@ -17,9 +17,19 @@ const orderItemSchema = new mongoose.Schema({
     type: Number, 
     ref: 'Product', 
     required: true  
-},
+  }
 
+}]);
+
+// Define a virtual field for totalAmount
+orderItemSchema.virtual('totalAmount').get(function () {
+  return this.quantity * this.price;
 });
+
+// Include 'totalAmount' in the schema
+orderItemSchema.set('toObject', { virtuals: true });
+orderItemSchema.set('toJSON', { virtuals: true });
+
 
 const OrderItem = mongoose.model('OrderItem', orderItemSchema);
 

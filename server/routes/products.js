@@ -1,31 +1,37 @@
 const express = require('express');
 const router = express.Router();
 const Product = require('../model/Product');
+const Category = require('../model/Category');
 
 // Create a new product
 router.post('/', async (req, res) => {
   try {
-    const { name, description, price, category } = req.body;
+    const { name, image, description, currentPrice, oldPrice, category } = req.body;
 
-    const existingProduct = await Product.findOne({ name, description, price, category });
+    if(!(image && description)){
+      return res.status(400).json({ error: 'All fields are required!' });
+
+    }
+
+    const existingProduct = await Product.findOne({ name, image, description, currentPrice, oldPrice, category });
     
     if (existingProduct) {
       return res.status(400).json({ error: 'Product already exists!' });
     };
 
-    const newProduct = new Product({ name, description, price, category });
+    const newProduct = new Product({ name, image, description, currentPrice, oldPrice, category});
 
     const savedProduct = await newProduct.save();
 
     // Return created product
-    res.status(201).json(savedProduct);
+    res.status(201).json(savedProduct.toJSON());
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 });
 
 // Get all products
-router.get('/', async (req, res) => {
+router.get('/', async (req, res) => { 
   try {
     const products = await Product.find()
     .populate('category');

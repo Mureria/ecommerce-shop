@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa'
 import Popular from '../components/Popular';
@@ -9,16 +10,37 @@ import Cat from '../components/Cat';
 import Partners from '../components/Partners';
 import HotCategory from '../components/HotCategory';
 import Trending from '../components/Trending';
+import ProductList from '../components/Products';
+// import Product from './Product';
 
 
 const data = ['Nike', 'Adidas', 'New Armor', 'Converse', 'New Balance']
 
+
+
 const Home = () => {
+
+  const [names, setName] = useState('');
+
+  const userId = '65a8d6a39fc146aac4f61788'
+
+    useEffect(() => {
+      const fetchName = async () => {
+        try {
+          const response = await axios.get(`http://localhost:5000/users/${userId}`);
+          setName(response.data); // Assuming the API response is an array of products
+        } catch (error) {
+          console.error('Error fetching name:', error);
+        }
+      };
+  
+      fetchName();
+    }, []);
   return (
     <>
       <div className='w-full'>
         <div className='max-w-[1200px] mx-auto my-2 px-4'>
-          <h3 className='text-2xl py-2'>Hi, Ireri</h3>
+          <h3 className='text-2xl py-2'>Hi, {names.firstName}</h3>
           <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold'>Step Up Your Shoe Game With Our Premium Shoes.</h1>
         </div>
         <div className='max-w-[1200px] mx-auto lg:my-8 my-4 px-4 relative'>
@@ -68,10 +90,12 @@ const Home = () => {
       <div className='w-full my-10 md:my-40'>
         
 
-        <div className='max-w-[1200px] my-40 mx-auto'>
+        <div className='max-w-[1200px] mb-0 mx-auto'>
           <FAQ/>
         </div>
         <Partners/>
+        <ProductList/>
+       
       </div>
     </>
   )

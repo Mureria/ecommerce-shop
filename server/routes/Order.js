@@ -8,25 +8,37 @@ const User  = require('../model/User');
 // Create a new order
 router.post('/', async (req, res) => {
   try {
-    const { orderItems, status, totalPrice, user } = req.body;
+    const { orderItems, status, user } = req.body;
 
-    // Validate if oreder already exists
-    const existingOrder = await Order.findOne({ orderItems, status, totalPrice, user });
-    
+    // Validate if the user exists
+    const existingUser = await User.findOne({ _id: user });
+
+    if (!existingUser) {
+      return res.status(400).json({ error: 'User does not exist!' });
+    }
+
+     // Validate if there are orderItems
+     const existingOrderItem = await OrderItem.findById({_id: orderItems})
+
+     if (!existingOrderItem || existingOrderItem.length === 0) {
+      return res.status(400).json({ error: 'Order must have at least one orderItem!' });
+    }
+  
+    // Validate if order already exists for the user
+    const existingOrder = await Order.findOne({ orderItems, status, user });
+
     if (existingOrder) {
       return res.status(400).json({ error: 'Order already exists!' });
-    };
+    }
 
-
-    // Create a new order instance 
+    // Create a new order instance
     const newOrder = new Order({
       orderItems,
       status,
-      totalPrice,
       user,
     });
 
-    // Save the user to the database
+    // Save the order to the database
     const savedOrder = await newOrder.save();
 
     // Return the Order
@@ -36,24 +48,24 @@ router.post('/', async (req, res) => {
   }
 });
 
+
+
+
 // Get all orders
 router.get('/', async (req, res) => {
   try {
     const orders = await Order.find()
     .populate('user', 'firstName lastName')
     .populate({
-        path: 'orderItems',
-        populate: {
-          path: 'product',
-          populate:{
-            path: 'category'
-          }
-        }})
+      path: 'orderItems',
+      populate: {
+        path: 'product',
+      }});
         
 
     // Validate the orders
-     if (!orders) {
-        return res.status(404).json({ error: 'Order not found' });
+     if (!orders || orders.length === 0) {
+        return res.status(404).json({ error: 'No orders at the moment' });
       }
 
     // Return the orders
@@ -89,6 +101,7 @@ router.get('/:id', async (req, res) => {
 
 // Get userOrders by userId
 router.get(`/get/userorders/:userid`, async (req, res) =>{
+
     const userOrderList = await Order.find({user: req.params.userid})
     .populate({ 
         path: 'orderItems', populate: {
@@ -96,8 +109,8 @@ router.get(`/get/userorders/:userid`, async (req, res) =>{
         }).sort({'dateOrdered': -1})
     .populate('user', 'firstName');
 
-    if(!userOrderList || userOrderList === 0) {
-        res.status(500).json('Order not found')
+    if(!userOrderList || userOrderList.length === 0) {
+       return res.status(500).json('No oder yet')
     } 
     res.send(userOrderList);
 });
