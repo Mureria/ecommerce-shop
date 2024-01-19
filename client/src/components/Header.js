@@ -82,14 +82,14 @@ const handleNav = () => {
             <Link to='about' className='border-b border-gray-800 py-4'onClick={handleNav}>About</Link>
             <Link to='contact' className='border-b border-gray-800 py-4'onClick={handleNav}>Contact</Link>
             <Link to='login' className='border-b border-gray-800 py-4'onClick={handleNav}>Login</Link>
-            <Link to='signin' className='border-b border-gray-800 py-4'onClick={handleNav}>Sign up</Link>
+            <Link to='register' className='border-b border-gray-800 py-4'onClick={handleNav}>Register</Link>
             <Link to='checkout' className='py-4'onClick={handleNav}>Cart</Link></ul> : 
             <ul className='md:hidden index-1000  absolute -top-[100%] bg-black text-white  flex text-2xl text-center flex-col w-full'>
             <Link to='/' className='border-b border-gray-800 py-4'>Home</Link>
             <Link to='about' className='border-b border-gray-800 py-4'>About</Link>
             <Link to='contact' className='border-b border-gray-800 py-4'>Contact</Link>
             <Link to='login' className='border-b border-gray-800 py-4'>Login</Link>
-            <Link to='signin' className='border-b border-gray-800 py-4'>Sign up</Link>
+            <Link to='register' className='border-b border-gray-800 py-4'>Register</Link>
             <Link to='checkout' className='py-4'>Cart</Link></ul>}
     
    </>

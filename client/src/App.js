@@ -15,6 +15,7 @@ import Checkout from './pages/Checkout';
 import Men from './pages/Men';
 import Women from './pages/Women';
 import Kids from './pages/Kids';
+import Recoil from './pages/Recoil';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
               <Route path='checkout' element={<Checkout/>}/>
               <Route path='product' element={<Product/>}/>
               <Route path='collection' element={<Collection/>}/>
+              <Route path='recoil' element={<Recoil/>}/>
               <Route path='faq' element={<FAQ/>}/>
             </Route> 
         </Routes>
