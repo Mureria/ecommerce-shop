@@ -8,11 +8,14 @@ import rebook from '../assets/Reebok_logo_PNG6.png'
 import vans from '../assets/Vans_logo_PNG10.png'
 import  sketchers from '../assets/Skechers_logo_PNG1.png'
 import  Lv from '../assets/Louis_Vuitton_logo_PNG8.png'
+import { useTheme } from '../Theme'
 
 const Slider = () => {
+  const { isDarkMode } = useTheme();
+
   return (
     <>
-          <div className='flex width-[1200px] gap-10 items-center justify-between'>
+          <div className={`flex gap-10 items-center py-10  ${isDarkMode ? 'bg-slate-200' : ''}`}>
           <img src={adidas} alt="" className='w-[100px] object-contain' />
           <img src={Lv} alt="" className='w-[100px] object-contain' />
           <img src={nike} alt="" className='w-[100px] object-contain' />

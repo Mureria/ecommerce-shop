@@ -5,12 +5,72 @@ const About = () => {
   <>
     <div className='w-full '>
     <div className='max-w-[1200px] mx-auto my-4 mb-10 px-4'>
-        <h1 className='font-bold text-xl text-center md:text-3xl '>
-          About
+        <h1 className='font-bold text-xl  md:text-3xl '>
+          About us
         </h1>
-        <p className='text-sm md:text-base my-4 md:my-6 '>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, corporis amet. Harum dolorem placeat assumenda laborum, porro dolores minus! Aliquid quae ipsa aspernatur repellat necessitatibus, excepturi dolore molestiae consequuntur sed eligendi similique modi deleniti cumque quas nesciunt ad eius, praesentium accusamus quia corporis nisi. Quisquam veritatis, magni laudantium dolorem veniam atque hic dicta quibusdam adipisci fuga qui nobis repellendus natus consectetur doloremque delectus ad officiis? Sit fugit placeat quia expedita qui harum commodi officiis sunt rem, architecto aspernatur nihil voluptatibus maxime, iste soluta quos corrupti minus, neque fuga! Est vitae minus ipsa commodi impedit cumque debitis quia necessitatibus placeat dolorum explicabo qui autem ea velit iusto ipsum adipisci quae, corrupti aperiam nisi illo culpa quis consectetur. Quasi impedit a delectus doloribus ullam, perferendis odio magni aliquid. Repudiandae atque, dolore corrupti laudantium delectus quasi laborum voluptatum nulla esse repellendus dolores accusamus excepturi sapiente, veniam amet. Eveniet perferendis iusto voluptas harum culpa placeat eos tenetur adipisci aut molestias consequatur, consequuntur necessitatibus minus praesentium, ad nemo enim ut ipsa facilis. Odit ex beatae quod doloribus et ipsa optio similique, molestiae, vitae illum distinctio perferendis quisquam! Reprehenderit quam, animi voluptates atque quod minima repellendus perferendis maiores itaque repudiandae quas. Velit blanditiis iste dignissimos. Quae, totam. Amet, magnam odit! Nostrum fugiat nesciunt dolore nobis quae optio voluptatibus, deserunt possimus natus! Quisquam, ullam nisi. Exercitationem, dignissimos. Repellendus impedit non libero quaerat molestias? Dignissimos voluptates ipsa error repellat unde ipsum sapiente! Culpa cumque soluta laudantium voluptatum ratione quia, itaque libero architecto nostrum odio saepe qui assumenda, ad omnis laborum! Hic architecto suscipit reprehenderit eveniet perspiciatis labore earum necessitatibus dolor veniam sed aliquam ducimus sapiente ad natus velit, saepe error blanditiis eum doloribus, assumenda nobis? Maxime dolor, magni amet, corporis numquam rerum veniam, fugit incidunt quas omnis vitae veritatis consequuntur non quo aliquid explicabo voluptas delectus quasi optio ducimus. Ipsam distinctio, exercitationem doloremque laborum ipsum maiores est aspernatur totam nulla accusamus minima alias natus ab laudantium aliquid ratione eius esse vitae quo minus tempora. Saepe aliquam id optio delectus dolores, atque, at laboriosam amet, illum quod ea iste? Similique, ipsa magnam debitis libero, repellat vero quia voluptatem laudantium molestias aut eius, aperiam qui dolores dignissimos adipisci explicabo tempore. Iste nulla deserunt animi eos quo vero praesentium pariatur, aut distinctio doloremque, blanditiis mollitia commodi sunt, reprehenderit magnam. Veritatis optio quis minima dicta velit perferendis distinctio, molestias iusto facilis ea maxime repudiandae impedit iste pariatur? Omnis nesciunt dicta repellat, nostrum est dolorem nisi eos nihil dolorum cupiditate mollitia praesentium quos doloribus deserunt! Nihil odit animi voluptatum suscipit sed debitis maiores quo quasi pariatur? Vero voluptatibus dolor deserunt eius dolore placeat odio quisquam asperiores impedit laboriosam voluptatum harum rem, magnam expedita ad corrupti non facere? Quidem perferendis veritatis tempore illo praesentium totam sequi repellendus dignissimos! Aut animi similique aliquid mollitia magni sequi quis delectus magnam dolorum ut, architecto necessitatibus optio odit reprehenderit deserunt est consectetur assumenda nemo dolore tempore nisi amet hic. Nesciunt magnam, totam possimus aliquid voluptates eaque enim dolor saepe dolorem ipsam. Saepe ab vitae aliquam atque. Fugit eum ut laborum odio libero velit numquam modi nostrum praesentium! Harum porro minus error unde, dolor placeat, repellat debitis adipisci animi laborum mollitia eligendi at aliquam aperiam facilis beatae rerum veritatis tempore odit reiciendis eveniet culpa voluptatibus possimus? Et tempora voluptates minus velit minima perspiciatis. Voluptas, laborum? Iusto, est. Quos atque molestias iure quam consectetur reiciendis, aut odio libero recusandae temporibus, delectus dicta totam suscipit. Earum culpa excepturi consectetur, nobis, id sed possimus tempora velit labore, repudiandae fuga asperiores. Rem accusamus cumque voluptates omnis, temporibus tempore doloremque perferendis. Consequatur quis sed, dolores nesciunt provident blanditiis dolorum laudantium voluptas vel tempore hic dolorem labore velit repellendus? Voluptatem commodi, consequatur praesentium repellendus non a dignissimos reprehenderit dolor aperiam dolorum recusandae beatae atque magnam minima exercitationem repellat illo cum maiores. Nihil, quo recusandae. Molestias voluptate repudiandae ut delectus ducimus corporis earum nulla, veniam excepturi ipsam nobis autem mollitia sapiente similique cumque perspiciatis doloribus placeat et obcaecati culpa consequatur nam cupiditate ipsa deleniti? Nulla praesentium molestias eligendi laboriosam esse consectetur cum eveniet repellendus, quas illum non iusto dolorem in! Possimus et sequi sapiente reprehenderit magnam eveniet est, soluta id nihil quidem quibusdam, reiciendis totam quas laborum iure aspernatur asperiores voluptates doloribus ducimus accusamus eius voluptate, distinctio sed quam. Assumenda minus aspernatur animi ut velit eius reiciendis, nemo consequatur quia. Commodi accusamus minus est dolores ab? Nihil temporibus reiciendis non nobis explicabo doloribus quia eaque, placeat ad voluptates? Ut odit optio cum sint libero nulla, molestiae quas corrupti, deleniti laudantium beatae! Sequi facilis labore, nemo libero atque id, quam soluta quas vero unde sit numquam harum doloribus sint distinctio velit adipisci illo corporis at! Consequatur, iure. Repellat vel reprehenderit quaerat quia labore. Laborum libero dolorum harum incidunt delectus eligendi, dignissimos ea maxime ab inventore magni facilis, fugit est, rem omnis sequi nulla? Consectetur dolorum vitae sunt enim numquam iure saepe delectus reprehenderit error doloribus vero sint nobis facere dolore pariatur quibusdam quia excepturi, quas qui perferendis maiores placeat doloremque. Et, nesciunt enim corrupti modi sapiente itaque magnam a beatae omnis. Libero porro suscipit deserunt, rerum, reprehenderit pariatur ex quam, sint beatae alias eos. At repellat nam officiis vel enim doloribus voluptatem nemo, ex saepe, unde rem recusandae error accusantium aperiam magni dolor sint quam repellendus cum? Sapiente nam, maiores quisquam ad amet, et quaerat nihil aspernatur, dignissimos error velit eveniet quod aut voluptates incidunt reiciendis modi vero consequuntur labore iure ea ipsum. Impedit nisi sint cupiditate tenetur similique doloremque, id, blanditiis dolorem praesentium ipsum rem eius ut. Mollitia officia, est tempora exercitationem laborum quas nesciunt rem commodi nihil eveniet impedit rerum repellat animi quasi sequi deleniti suscipit magni tempore quos velit quo iste. Animi sint voluptas amet maiores, aut porro autem distinctio doloribus aspernatur eius facere suscipit impedit esse consequuntur, magni a, asperiores eos vero qui? Amet laboriosam itaque deleniti optio! Ut magni in accusantium accusamus tempore cupiditate consequuntur minus reprehenderit earum? Inventore vero, nemo recusandae dolorem doloribus quas nobis sequi aut delectus asperiores? Explicabo ipsam quas ex, aut vel quod iure nam ab dignissimos inventore!
-        </p>
+        <p className='text-[#808080] text-base font-medium py-2'>Step Up Your Shoe Game</p>
+        <p className='text-[#707070]'>Welcome to our premium footwear ecommerce platform, where luxury meets comfort and style. At ChosenSoles, we are dedicated to providing discerning customers like you with an unparalleled shopping experience for premium shoes that elevate your style and reflect your unique personality.</p>
+
+        <div className='mt-10 space-y-4'>
+          <h1 className='text-xl font-medium text-[#808080]'>Our Mission</h1>
+          <div className='grid grid-cols-2 gap-10 text-[#707070] tracking-wide leading-8'>
+            <div className='flex '>
+              <p>Our mission is simple: to curate a meticulously selected collection of premium footwear from top brands around the world. We believe that every step you take should be a statement of sophistication and quality craftsmanship. With this vision in mind, we scour the globe to bring you the finest shoes that blend timeless elegance with modern trends.</p>
+            </div>
+            <div>
+              <img src='https://images.unsplash.com/photo-1565814636199-ae8133055c1c?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' className='h-[300px] w-full object-cover '/>
+            </div>
+          </div>
+        </div>
+
+        <div className='mt-10 space-y-4'>
+          <h1 className='text-xl font-medium text-[#808080]'>Unparalleled Selection</h1>
+          <div className='grid grid-cols-2 gap-10  text-[#707070] tracking-wide leading-8'>
+            <div>
+              <img src='https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fHNob2UlMjByYWNrfGVufDB8fDB8fHww'/>
+            </div>
+            <div className='flex '>
+              <p>Discover a world of possibilities with our extensive selection of premium footwear. Whether you're searching for classic leather loafers, sleek sneakers, elegant heels, or rugged boots, we have something to suit every occasion and style preference. With new arrivals added regularly, there's always something fresh and exciting to explore in our collection.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className='mt-10 space-y-4'>
+          <h1 className='text-xl font-medium text-[#808080]'>Personalized Service</h1>
+          <div className='grid grid-cols-2 gap-10  text-[#707070] tracking-wide leading-8'>
+            <div className='flex '>
+              <p> Customer satisfaction is our top priority. Our dedicated team is here to assist you every step of the way, from expert styling advice to hassle-free returns. Whether you have questions about sizing, materials, or styling tips, we're always available to provide personalized assistance and ensure that your shopping experience exceeds your expectations.</p>
+            </div>
+            <div>
+              <img src='https://plus.unsplash.com/premium_photo-1661526423654-32fac398cf1a?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'/>
+            </div>
+          </div>
+        </div>
+
+        <div className='mt-10 space-y-4'>
+          <h1 className='text-xl font-medium text-[#808080]'>Experience Luxury Online Shopping</h1>
+          <div className='grid grid-cols-2 gap-10  text-[#707070] tracking-wide leading-8'>
+            <div>
+              <img src='https://plus.unsplash.com/premium_photo-1677995700941-100976883af7?q=80&w=1523&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'/>
+            </div>
+            <div className='flex '>
+              <p>Indulge in the luxury of online shopping with our user-friendly interface, seamless navigation, and secure checkout process, you can shop with confidence and convenience from the comfort of your own home. Plus, enjoy fast and reliable shipping to your doorstep, so you can start stepping out in style in no time.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className='mt-10 space-y-4'>
+          <h1 className='text-xl font-medium text-[#808080]'>Join Our Community</h1>
+          <div className='grid grid-cols-2 gap-10  text-[#707070] tracking-wide leading-8'>
+            <div className='flex '>
+              <p>Become part of our exclusive community of discerning shoppers who appreciate the finer things in life. Follow us on social media for the latest trends, style inspiration, and exclusive offers. Sign up for our newsletter to stay updated on new arrivals, promotions, and events.</p>
+            </div>
+            <div>
+              <img src='https://images.unsplash.com/photo-1579869847557-1f67382cc158?q=80&w=1634&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'/>
+            </div>
+          </div>
+        </div>
+        <p className='mt-10 text-[#707070] leading-8 tracking-wide'>Experience the difference of premium footwear with Chosensoles. Browse our collection today and discover the perfect pair of shoes to elevate your style and make a lasting impression wherever you go. Welcome to luxury shopping at its finest.</p>
 
       </div>
     </div>

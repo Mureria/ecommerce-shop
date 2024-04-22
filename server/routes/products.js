@@ -6,7 +6,7 @@ const Category = require('../model/Category');
 // Create a new product
 router.post('/', async (req, res) => {
   try {
-    const { name, image, description, currentPrice, oldPrice, category } = req.body;
+    const { name, image, description, currentPrice, oldPrice, category, tag, brand } = req.body;
 
     if(!(image && description)){
       return res.status(400).json({ error: 'All fields are required!' });
@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
       return res.status(400).json({ error: 'Product already exists!' });
     };
 
-    const newProduct = new Product({ name, image, description, currentPrice, oldPrice, category});
+    const newProduct = new Product({ name, image, description, currentPrice, oldPrice, category, tag, brand});
 
     const savedProduct = await newProduct.save();
 
@@ -65,6 +65,37 @@ router.get('/:id', async (req, res) => {
     res.status(500).json({ error: 'Server error' });
   }
 });
+
+
+// Get products based on category
+router.get('/category/:category', async (req, res) => {
+  const { category } = req.params;
+  try {
+    const products = await Product.find({ category }).populate('category');
+    res.json(products);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
+// Get products based on tags
+router.get('/tag', async (req, res) => {
+  const { tag } = req.query;
+  try {
+    let query = {};
+    if (tag) {
+      query = { tags: { $in: tag.split(',') } }; // Fetch products with any of the specified categories
+    }
+    const products = await Product.find(query);
+    res.json(products);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
+
 
 // Update a product by ID
 router.put('/:id', async (req, res) => {

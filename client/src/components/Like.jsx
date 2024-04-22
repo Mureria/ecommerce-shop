@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { useTheme } from "../Theme";
+
 
 const shoes = [{
     images: 'https://images.unsplash.com/photo-1552346154-21d32810aba3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
@@ -29,6 +31,8 @@ const shoes = [{
 ];
 
 const Like = () => {
+    const { isDarkMode } = useTheme();
+
   return (
     <>
         <div className='w-full'>
@@ -40,8 +44,8 @@ const Like = () => {
                             <div className='shadow-lg'>
                                 <Link to='product'>
                                     <img src={item.images} alt='' className='	'/>
-                                    <h1 className='text-lg px-2'>{item.brand}</h1>
-                                    <h1 className='text-xl font-bold px-2 pb-6'>{item.amount}</h1>
+                                    <h1 className={`text-lg px-2 ${isDarkMode ? 'text-[#707070]' : ''}`}>{item.brand}</h1>
+                                    <h1 className={`text-xl font-bold px-2 pb-6 ${isDarkMode ? 'text-[#808080]' : ''}`}>{item.amount}</h1>
                                 </Link>
                                 
                             </div>

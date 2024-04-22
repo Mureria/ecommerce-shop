@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { FaStar } from "react-icons/fa";
+import Pagination from "./Pagination";
 
 const Review = () => {
   const [reviews, setReviews] = useState("");
@@ -9,7 +10,7 @@ const Review = () => {
     const fetchReviews = async () => {
       try {
         const response = await axios.get(`http://localhost:5000/reviews`);
-        setReviews(response.data); // Assuming the API response is an array of products
+        setReviews(response.data);
       } catch (error) {
         console.error("Error fetching products:", error);
       }
@@ -21,49 +22,35 @@ const Review = () => {
   return (
     <>
       {/* Review */}
-      <div className="bg-slate-100 mt-4 p-2 rounded">
-        <h1 id="Reviews" className="font-bold text-lg pb-6">
-          Customer Reviews
-        </h1>
-        <div className="flex flex-col md:flex-row items-start bg-white px-4 py-2 gap-5 md:gap-20">
+      <div className="bg-inherit mt-4 p-2 rounded">
+        <h1 className="font-bold text-lg pb-6">Customer Reviews</h1>
+        <div className="flex flex-col md:flex-row items-start bg-inherit px-4 py-2 gap-5 md:gap-20">
           <div className=" px-20 py-8 border border-r">
             <p className="text-5xl text-orange-400 mb-3">
               {reviews.length === 0 ? (
                 <div>
-                  0<span className="text-black/50 text-5xl">/5</span>
+                  0<span className="text-5xl">/5</span>
                 </div>
               ) : (
                 <div>
                   {reviews.length}
-                  <span className="text-black/50 text-5xl">/5</span>
+                  <span className=" text-5xl">/5</span>
                 </div>
               )}
             </p>
             <p className="tracking-widest flex justify-center md:justify-start text-orange-500">
               <FaStar />
-              <FaStar /> <FaStar />
+              <FaStar />
+              <FaStar />
               <FaStar />
               <FaStar />
             </p>
           </div>
 
-          <div>
-            <div className="flex gap-4 items-center">
-              <div className="flex gap-2 items-center flex-1">
-                <div className="text-xl font-medium">5</div>
-                <div className=" text-orange-500">
-                  <FaStar />
-                </div>
-                <div className="text-lg font-normal font-mono text-[#75757a]">
-                  234
-                </div>
-              </div>
-              <div>-------</div>
-            </div>
-          </div>
+          <div></div>
         </div>
 
-        <div className=" bg-white mt-4 px-6 md:px-14 py-2 text-lg">
+        <div className=" bg-inherit mt-4 px-6 md:px-14 py-2 text-lg">
           <div className=" border-b py-4 ">
             {reviews.length === 0 ? (
               <p className="flex justify-center items-center text-xl text-slate-300">
@@ -90,6 +77,7 @@ const Review = () => {
             )}
           </div>
         </div>
+        {reviews.length >= 10 ? <Pagination /> : ""}
       </div>
     </>
   );

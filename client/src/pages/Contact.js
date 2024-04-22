@@ -6,42 +6,42 @@ const Contact = () => {
       <div className='w-full h-full'>
         <div className='max-w-[1200px] mx-auto my-2 mb-4 px-4'>
           <div className='grid md:grid-cols-2 gap-4'>
-            <div className='bg-gray-100 py-2 px-8'>
+            <div className='bg-inherit py-2 px-8'>
               <h1 className='text-xl text-center md:text-xl font-bold'>Contact Us</h1>
               <p className='text-sm md:text-sm text-center py-2'>If you have any questions or inquiries, please don't hesitate to reach out to us.</p>
               <form action="" className='my-6'>
                 <div className=' grid grid-cols-2 gap-4 w-full'>
                   <div>
-                    <label for="firstName" class=" mt-2 block  font-medium leading-6 text-gray-900 text-sm">First Name *</label>
+                    <label for="firstName" className=" mt-2 block  font-medium leading-6 text-sm">First Name *</label>
                     <div className="">
-                      <input id="firstName" name="firstName" type="firstName" autocomplete="firstName" required class="block w-full rounded-md border-0 py-1 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-xl sm:text-sm sm:leading-6"/>
+                      <input id="firstName" name="firstName" placeholder='First Name' type="firstName" autocomplete="firstName" required className="block w-full rounded-md border outline-none  px-3  shadow-sm placeholder:text-gray-400 md:text-sm py-2 sm:text-sm sm:leading-6 bg-inherit"/>
                     </div>
                   </div>   
                   <div>
-                    <label for="secondName" class=" mt-2 block font-medium leading-6 text-gray-900 text-sm">Second Name</label>
+                    <label for="secondName" className=" mt-2 block font-medium leading-6 text-sm">Second Name</label>
                     <div className="">
-                      <input id="secondName" name="secondName" type="secondName" autocomplete="secondName" required class="block w-full rounded-md border-0 py-1 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-xl sm:text-sm sm:leading-6"/>
+                      <input id="secondName" name="secondName" type="secondName" autocomplete="secondName" required placeholder='Second Name' className="block w-full rounded-md border py-2 px-3  shadow-sm  placeholder:text-gray-400 outline-none  md:text-sm bg-inherit sm:text-sm sm:leading-6"/>
                     </div>
                   </div>   
                 </div>
                 <div>
-                    <label for="email" class="mt-2 block  font-medium leading-6 text-gray-900 text-sm">Email * </label>
+                    <label for="email" className="mt-2 block  font-medium leading-6 text-sm">Email * </label>
                     <div className="">
-                      <input id="email" name="email" type="email" autocomplete="email" required class="block w-full rounded-md border-0 py-1 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-xl sm:text-sm sm:leading-6"/>
+                      <input id="email" name="email" type="email" autocomplete="email" required placeholder='Email' className="block w-full rounded-md border outline-none py-2 px-3  shadow-sm  placeholder:text-gray-400  md:text-sm bg-inherit sm:text-sm sm:leading-6"/>
                     </div>
                   </div>  
                 <div>
-                    <label for="phone" class=" block  font-medium leading-6 mt-2 text-gray-900 text-sm">Phone *</label>
+                    <label for="phone" className=" block  font-medium leading-6 mt-2  text-sm">Phone *</label>
                     <div className="">
-                      <input id="phone" name="phone" type="phone" autocomplete="phone" required class="block w-full rounded-md border-0 py-1 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:text-xl sm:text-sm sm:leading-6"/>
+                      <input id="phone" name="phone" type="phone" autocomplete="phone" required placeholder='Phone' className="block w-full rounded-md border py-2 px-3  shadow-sm  outline-none placeholder:text-gray-400  md:text-sm bg-inherit sm:text-sm sm:leading-6"/>
                     </div>
                   </div>  
                   <div className="sm:col-span-2">
-                    <label htmlFor="message" className="block text-sm font-semibold leading-6 mt-2 text-gray-900">
+                    <label htmlFor="message" className="block text-sm font-semibold leading-6 mt-2">
                       Message
                     </label>
                     <div className="">
-                      <textarea name="message" id="message" rows={2} className="block w-full rounded-md border-0 px-3.5 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" defaultValue={''}/>
+                      <textarea name="message" id="message" placeholder='Message' rows={2} className="block w-full rounded-md px-3.5 py-3 text-gray-00 shadow-sm  ring-inset ring-gray-300 placeholder:text-gray-400 bg-inherit outline-none border sm:text-sm sm:leading-6" defaultValue={''}/>
                     </div>
                   </div>  
                   <div className="mt-4">
