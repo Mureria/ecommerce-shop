@@ -24,10 +24,10 @@ category: [{
   required: true 
 }],
 
-tag: { 
+tag: [{ 
   type: String,  
   required: true 
-},
+}],
 
 brand: { 
   type: String,  

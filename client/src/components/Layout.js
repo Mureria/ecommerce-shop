@@ -7,7 +7,7 @@ import { useTheme } from "../Theme";
 
 
 const Layout = () => {
-  const { isDarkMode, toggleTheme } = useTheme();
+  const { isDarkMode } = useTheme();
 
   return (
       <>

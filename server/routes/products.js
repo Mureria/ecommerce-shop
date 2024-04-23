@@ -44,7 +44,7 @@ router.get('/', async (req, res) => {
     // Return the products
     res.status(200).json(products);
   } catch (error) {
-    res.status(500).json({ error: 'Server error' });
+    res.status(500).json({ error: 'Server error iko' });
   }
 });
 
@@ -80,20 +80,26 @@ router.get('/category/:category', async (req, res) => {
 });
 
 // Get products based on tags
-router.get('/tag', async (req, res) => {
+router.get('/get/tag', async (req, res) => {
   const { tag } = req.query;
+
   try {
-    let query = {};
-    if (tag) {
-      query = { tags: { $in: tag.split(',') } }; // Fetch products with any of the specified categories
+    const products = await Product.find(req.query);
+
+    if (!products || products.length === 0) {
+      return res.status(404).json({ error: 'No products found with the specified tag' });
     }
-    const products = await Product.find(query);
-    res.json(products);
+
+    // Return products found
+    res.status(200).json(products);
+
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Server error' });
   }
 });
+
+
 
 
 
