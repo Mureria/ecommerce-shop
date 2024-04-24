@@ -38,7 +38,7 @@ const ProductList = (props) => {
     );
   };
 
-  if (loading) {
+  if (loading || !products.length) {
     return (
       <div className="flex h-screen items-center justify-center md:text-3xl ">
         Loading...
