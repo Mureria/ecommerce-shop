@@ -6,7 +6,7 @@ const Category = require('../model/Category');
 // Create a new product
 router.post('/', async (req, res) => {
   try {
-    const { name, image, description, currentPrice, oldPrice, category } = req.body;
+    const { name, image, description, currentPrice, oldPrice, category, tag, brand } = req.body;
 
     if(!(image && description)){
       return res.status(400).json({ error: 'All fields are required!' });
@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
       return res.status(400).json({ error: 'Product already exists!' });
     };
 
-    const newProduct = new Product({ name, image, description, currentPrice, oldPrice, category});
+    const newProduct = new Product({ name, image, description, currentPrice, oldPrice, category, tag, brand});
 
     const savedProduct = await newProduct.save();
 
@@ -44,7 +44,7 @@ router.get('/', async (req, res) => {
     // Return the products
     res.status(200).json(products);
   } catch (error) {
-    res.status(500).json({ error: 'Server error' });
+    res.status(500).json({ error: 'Server error iko' });
   }
 });
 
@@ -65,6 +65,43 @@ router.get('/:id', async (req, res) => {
     res.status(500).json({ error: 'Server error' });
   }
 });
+
+
+// Get products based on category
+router.get('/category/:category', async (req, res) => {
+  const { category } = req.params;
+  try {
+    const products = await Product.find({ category }).populate('category');
+    res.json(products);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
+// Get products based on tags
+router.get('/get/tag', async (req, res) => {
+  const { tag } = req.query;
+
+  try {
+    const products = await Product.find(req.query);
+
+    if (!products || products.length === 0) {
+      return res.status(404).json({ error: 'No products found with the specified tag' });
+    }
+
+    // Return products found
+    res.status(200).json(products);
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
+
+
+
 
 // Update a product by ID
 router.put('/:id', async (req, res) => {

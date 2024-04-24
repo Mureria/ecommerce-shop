@@ -18,6 +18,29 @@ image: {
     required: true 
 },
 
+category: [{ 
+  type: mongoose.Schema.Types.ObjectId, 
+  ref: 'Category', 
+  required: true 
+}],
+
+tag: [{ 
+  type: String,  
+  required: true 
+}],
+
+brand: { 
+  type: String,  
+  required: true 
+},
+
+
+category: { 
+  type: mongoose.Schema.Types.ObjectId, 
+  ref: 'Category', 
+  required: false 
+},
+
   currentPrice: { 
     type: Number, 
     required: true 
@@ -28,11 +51,7 @@ image: {
     required: true 
 },
 
-  category: { 
-    type: mongoose.Schema.Types.ObjectId, 
-    ref: 'Category', 
-    required: false 
-},
+  
 
 
 }]);
