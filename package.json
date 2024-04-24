@@ -30,6 +30,7 @@
   "scripts": {
     "client-install": "cd client && npm install",
     "server-install": "cd server && npm install",
+    "build": "npm run build",
     "install-all-deps": "concurrently \"npm run server-install\" \"npm run client-install\""
   },
   "eslintConfig": {
