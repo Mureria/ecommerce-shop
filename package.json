@@ -30,11 +30,14 @@
   "scripts": {
     "client-install": "cd client && npm install",
     "server-install": "cd server && npm install",
-    "start": "concurrently \"cd server && npm start\" \"cd client && npm start\"",
-    "build": "npm run build",
+    "client-build": "cd client && npm run build",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "node index.js",
+    "build": "npm run client-build",
     "install-all-deps": "concurrently \"npm run server-install\" \"npm run client-install\""
   },
-    
+  
+  
   "eslintConfig": {
     "extends": [
       "react-app",
