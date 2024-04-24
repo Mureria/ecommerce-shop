@@ -15,7 +15,7 @@
     "jsonwebtoken": "^9.0.2",
     "marquee": "^0.2.1",
     "mongoose": "^8.0.3",
-    "nodemon": "^3.0.2",
+    "nodemon": "^3.1.0",
     "react": "^18.2.0",
     "react-autosuggest": "^10.1.0",
     "react-dom": "^18.2.0",
@@ -32,12 +32,13 @@
     "server-install": "cd server && npm install",
     "client-build": "cd client && npm run build",
     "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "node index.js",
-    "build": "npm run client-build",
+    "server": "cd server && nodemon index.js",
+    "client": "cd client && npm run start",
+    "build": "npm run client-build && npm run server-install",
     "install-all-deps": "concurrently \"npm run server-install\" \"npm run client-install\""
   },
   
-  
+
   "eslintConfig": {
     "extends": [
       "react-app",
