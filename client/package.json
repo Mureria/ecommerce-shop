@@ -28,11 +28,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "client-install": "cd client && npm install",
-    "server-install": "cd server && npm install",
-    "start": "concurrently \"cd server && npm start\" \"cd client && npm start\"",
-    "build": "npm run build",
-    "install-all-deps": "concurrently \"npm run server-install\" \"npm run client-install\""
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject" 
   },
     
   "eslintConfig": {
