@@ -77,7 +77,7 @@ const Home = () => {
   return (
     <>
       <div className="w-full">
-        <div className="max-w-[1200px] mx-auto my-2 space-y-4">
+        <div className="max-w-[1200px] mx-auto my-2 space-y-4 px-4">
           <h3 className="text-2xl md:mt-10 ">Hi, {names.firstName}</h3>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">
             Step Up Your Shoe Game With Our Premium Shoes.
@@ -159,15 +159,16 @@ const Home = () => {
             isDarkMode ? "bg-[#141414] " : "bg-slate-100"
           }`}
         >
-          <div className="max-w-[1200px] mt-32 mx-auto px-4 py-16">
+          <div className="max-w-[1200px] mt-8 md:mt-32 mx-auto px-4 py-16">
             <div className="flex flex-col-reverse  md:flex-row gap-4 ">
-              <div className="flex flex-col justify-center items-start">
-                <h1 className="pb-10 md:pb-20 text-3xl md:text-5xl font-bold">
+              <div className="flex flex-col justify-center items-center md:items-start">
+                <h1 className="pb-10 md:pb-20 text-3xl md:text-5xl font-bold text-center md:text-start">
                   Shop through our collection
                 </h1>
                 <Link
                 onClick={() => window.scrollTo(0, 0)}
                  to="collection">
+                  
                   <p className="font-medium text-base md:text-base border border-gray-800 py-3 px-5 rounded-md hover:bg-black hover:text-white ease-in-out duration-700">
                     Shop now
                   </p>

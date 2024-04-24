@@ -58,7 +58,7 @@ const Search = () => {
           value={value}
           onChange={handleChange}
           placeholder="Search..."
-          className={`border bg-inherit outline-none my-5 rounded px-4 py-2 mr-2 ${
+          className={`border bg-inherit outline-none my- rounded px-4 py-2 mr-2 ${
             isDarkMode ? "" : "border-slate-300"
           }`}
         />
@@ -71,7 +71,7 @@ const Search = () => {
       </form>
 
       <div
-        className={`absolute top-[66px] cursor-pointer w-[215px]  text-sm ${
+        className={`absolute top-[43px] cursor-pointer w-[215px]  text-sm ${
           isDarkMode ? "bg-[#101010]" : "text-slate-900 bg-slate-100 "
         }`}
       >

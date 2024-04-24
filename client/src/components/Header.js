@@ -6,7 +6,7 @@ import { CiDark, CiLight } from "react-icons/ci";
 import Marquee from "react-fast-marquee";
 import { useTheme } from "../Theme";
 
-const Header = ({ cartLength }) => {
+const Header = () => {
   const { isDarkMode, toggleTheme } = useTheme();
 
   const [nav, setNav] = useState(false);
@@ -116,7 +116,7 @@ const Header = ({ cartLength }) => {
           </div>
 
           {/*Mobile  */}
-          <div className="md:hidden px-4">
+          <div className={` md:hidden px-4 text-white`}>
             {nav ? (
               <AiOutlineClose size={22} onClick={handleNav} />
             ) : (
@@ -126,38 +126,38 @@ const Header = ({ cartLength }) => {
         </div>
       </div>
       {nav ? (
-        <ul className="md:hidden h-screen fixed  mt-4 bg-inherit flex flex-col text-center max-w-[100%] text-2xl  w-full transform top-10 overflow-auto ease-in-out transition-all duration-500 z-20 ">
+        <ul className="md:hidden h-screen fixed  mt-4 bg-inherit flex flex-col text-center max-w-[100%] text-xl font-medium  w-full transform top-10 overflow-auto ease-in-out transition-all duration-500 z-20 ">
           <Link
             to="/"
-            className="border-b border-gray-800 py-4"
+            className="border-b border-gray-800 py-4 max-w-[300px] mx-auto"
             onClick={handleNav}
           >
             Home
           </Link>
           <Link
             to="about"
-            className="border-b border-gray-800 py-4"
+            className="border-b border-gray-800 py-4 max-w-[300px] mx-auto"
             onClick={handleNav}
           >
             About
           </Link>
           <Link
             to="contact"
-            className="border-b border-gray-800 py-4"
+            className="border-b border-gray-800 py-4 max-w-[300px] mx-auto"
             onClick={handleNav}
           >
             Contact
           </Link>
           <Link
             to="login"
-            className="border-b border-gray-800 py-4"
+            className="border-b border-gray-800 py-4 max-w-[300px] mx-auto"
             onClick={handleNav}
           >
             Login
           </Link>
           <Link
             to="register"
-            className="border-b border-gray-800 py-4"
+            className="border-b border-gray-800 py-4 max-w-[300px] mx-auto"
             onClick={handleNav}
           >
             Register
