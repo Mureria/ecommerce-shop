@@ -8,8 +8,8 @@ const HotCategory = () => {
   return (
     <>
       <div className="w-full">
-        <div className="max-w-[1200px] mt-6 mx-auto px-4">
-          <h1 className="text-2xl font-bold py-4 md:text-4xl">
+        <div className="max-w-[1200px] md:mt-6 mx-auto px-4">
+          <h1 className="text-2xl font-bold pb-4 md:text-4xl">
             Hot Categories
           </h1>
           <div className="grid gap-2   grid-cols lg:grid-cols-8 lg:grid-rows-2  ">
