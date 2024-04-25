@@ -25,7 +25,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Get all product categories
+// Get all product categories.
 router.get('/', async (req, res) => {
   try {
     const categories = await Category.find();
