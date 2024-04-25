@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <>
       <div className='w-full h-full'>
-        <div className='max-w-[1200px] mx-auto my-2 mb-4'>
+        <div className='max-w-[1200px] mx-auto my-2 mb-4 px-4'>
           <div className='grid md:grid-cols-2 gap-4'>
             <div className='bg-inherit py-2 '>
               <h1 className='text-2xl font-bold py-4 md:text-4xl'>Contact Us</h1>

@@ -11,7 +11,7 @@ const Header = () => {
 
   const [nav, setNav] = useState(false);
 
-  const logged = false;
+  const logged = true;
 
   const handleNav = () => {
     setNav(!nav);
@@ -92,9 +92,9 @@ const Header = () => {
               {logged ? (
                 <div className="relative group">
                   <img
-                  src="https://scontent.fnbo9-1.fna.fbcdn.net/v/t39.30808-1/344557470_210016938447075_431709156742481037_n.jpg?stp=c0.30.200.200a_dst-jpg_p200x200&_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeE86jCIdWzp-BvKzx7ipVmk1hVTMEP80G3WFVMwQ_zQbQgGJDCFu5_NsAhkzpj4Z4f82xi_IUBWn65Hs3ieNm5W&_nc_ohc=OcyoGx8YE5wAb57yEmQ&_nc_pt=5&_nc_ht=scontent.fnbo9-1.fna&oh=00_AfBM8AyVSHf2H_Pt5Z4fMo5tUFHhPEM-YkuVFqfrYK9tVw&oe=661A3F9F"
+                  src="https://scontent.fnbo10-1.fna.fbcdn.net/v/t39.30808-6/383783882_2385446108304304_1440592635612658205_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGe1sTzEObNB1Agj5omFxdljDr5cfJR-KmMOvlx8lH4qQ2h3_98-7VJ2a8GGKtKmygpmJobtsyCCtEGKW6MuRRq&_nc_ohc=fZptVbqyeHMQ7kNvgFofCBr&_nc_pt=5&_nc_zt=23&_nc_ht=scontent.fnbo10-1.fna&oh=00_AfDEDva3Kn3-0DAJqR1nA8iIR9MXpzsl07D51bhqEMyfmQ&oe=662FEE19"
                     alt=""
-                    className="rounded-full object-cover w-9 h-9 group-hover:opacity-75"
+                    className="rounded-full object-cover  w-8 h-8 group-hover:opacity-75"
                   />
                   <p className="hidden absolute bottom-[-20px] text-black text-xs py-0 px-1 rounded-sm bg-slate-200 group-hover:block">
                     Account
