@@ -53,7 +53,7 @@ const ProductList = (props) => {
         <div className="relative">
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-5">
             {[...products, ...products, ...products]
-              .slice(currentIndex, currentIndex + 5)
+              .slice(currentIndex, currentIndex + (window.innerWidth < 768 ? 2 : 5))
               .map((product, index) => {
                 return (
                   <div key={index} className="shadow-md hover:shadow-lg">

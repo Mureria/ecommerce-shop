@@ -82,7 +82,7 @@ const Home = () => {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">
             Step Up Your Shoe Game With Our Premium Shoes.
           </h1>
-          <div className="">
+          <div className="pt-5">
             <Search />
           </div>
         </div>
