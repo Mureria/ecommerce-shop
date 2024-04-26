@@ -3,6 +3,8 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const cors = require('cors'); 
+const port = process.env.PORT || 5000;
+
 
 
 const authRoutes = require('./routes/auth.js');
@@ -15,7 +17,6 @@ const reviewRoutes = require('./routes/Review.js');
 
 
 
-const port = process.env.PORT || 5000;
 
 // middleware
 app.use(express.json());
